@@ -19,15 +19,26 @@ public class PathDrawManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePosition = Input.mousePosition;
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+#if UNITY_EDITOR
+        Vector3 inputPosition = Input.mousePosition;
+#elif UNITY_ANDROID
+        Vector3 inputPosition;
+        if (Input.touchCount <= 0)
+        {
+            if (lastPosition.HasValue)
+                inputPosition = lastPosition.Value;
+            else
+                inputPosition = new Vector2(Screen.width / 2.0f, Screen.height / 2.0f);
+        }
+        else
+            inputPosition = Input.GetTouch(0).position;
+#endif
+        inputPosition.x = Screen.width / 2.0f;
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(inputPosition);
         worldPosition.z = 0;
-        if (lastPosition.HasValue)
-            if (Vector3.Distance(worldPosition, lastPosition.Value) < 0.2f)
-                return;
         positions.Enqueue(worldPosition);
-        lastPosition = worldPosition;
-        if (positions.Count > 200)
+        lastPosition = inputPosition;
+        if (positions.Count > 100)
             positions.Dequeue();
         lineRenderer.positionCount = positions.Count;
         lineRenderer.SetPositions(positions.ToArray());
