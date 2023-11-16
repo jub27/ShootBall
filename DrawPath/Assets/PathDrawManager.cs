@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
+
 
 public class PathDrawManager : MonoBehaviour
 {
     private LineRenderer lineRenderer;
     private Queue<Vector3> positions;
     private Vector3? lastPosition;
+    private EdgeCollider2D edgeCollider;
     private void Awake()
     {
         lastPosition = null;
         positions = new Queue<Vector3>();
         lineRenderer = GetComponent<LineRenderer>();
+        edgeCollider = GetComponent<EdgeCollider2D>();
     }
 
     // Update is called once per frame
@@ -38,9 +42,10 @@ public class PathDrawManager : MonoBehaviour
         worldPosition.z = 0;
         positions.Enqueue(worldPosition);
         lastPosition = inputPosition;
-        if (positions.Count > 100)
+        if (positions.Count > 500)
             positions.Dequeue();
         lineRenderer.positionCount = positions.Count;
         lineRenderer.SetPositions(positions.ToArray());
+        edgeCollider.SetPoints(positions.Select(item => new Vector2(item.x, item.y)).ToList());
     }
 }
