@@ -8,6 +8,8 @@ using UnityEngine.UIElements;
 
 public class PathDrawManager : MonoBehaviour
 {
+    [SerializeField]
+    private RunningObject runningObject;
     private LineRenderer lineRenderer;
     private Queue<Vector3> positions;
     private Vector3? lastPosition;
@@ -37,9 +39,9 @@ public class PathDrawManager : MonoBehaviour
         else
             inputPosition = Input.GetTouch(0).position;
 #endif
-        inputPosition.x = Screen.width / 2.0f;
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(inputPosition);
         worldPosition.z = 0;
+        worldPosition.x = runningObject.transform.position.x + 0.1f;
         positions.Enqueue(worldPosition);
         lastPosition = inputPosition;
         if (positions.Count > 500)
