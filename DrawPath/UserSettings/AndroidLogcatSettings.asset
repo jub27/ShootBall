@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R5CT4379SBP",
         "name": "com.DefaultCompany.DrawPath",
-        "processId": 9446,
+        "processId": 26685,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -42,6 +42,12 @@
             "deviceId": "R5CT4379SBP",
             "name": "com.DefaultCompany.DrawPath",
             "processId": 9446,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT4379SBP",
+            "name": "com.DefaultCompany.DrawPath",
+            "processId": 26685,
             "exited": false
         }
     ],

@@ -41,7 +41,7 @@ public class PathDrawManager : MonoBehaviour
 #endif
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(inputPosition);
         worldPosition.z = 0;
-        worldPosition.x = runningObject.transform.position.x + 0.1f;
+        worldPosition.x = runningObject.transform.position.x + 0.07f;
         positions.Enqueue(worldPosition);
         lastPosition = inputPosition;
         if (positions.Count > 500)

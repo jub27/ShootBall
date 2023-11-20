@@ -15,4 +15,22 @@ public class RunningObject : MonoBehaviour
     {
         _rigidbody.AddForce(new Vector2(50, 10), ForceMode2D.Impulse);
     }
+
+    private void Update()
+    {
+        if (Input.touchCount > 0)
+        {
+            AddForce();
+        }
+    }
+
+    public void AddForce()
+    {
+        _rigidbody.AddForce(new Vector2(50, 10), ForceMode2D.Impulse);
+    }
+
+    public float GetXSpeed()
+    {
+        return _rigidbody.velocity.x;
+    }
 }
