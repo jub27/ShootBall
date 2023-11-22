@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R5CT4379SBP",
         "name": "com.DefaultCompany.DrawPath",
-        "processId": 26685,
+        "processId": 29434,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,43 +11,37 @@
         {
             "deviceId": "R5CT4379SBP",
             "name": "com.DefaultCompany.DrawPath",
-            "processId": 32572,
-            "exited": false
-        },
-        {
-            "deviceId": "R5CT4379SBP",
-            "name": "com.DefaultCompany.DrawPath",
-            "processId": 7409,
-            "exited": false
-        },
-        {
-            "deviceId": "R5CT4379SBP",
-            "name": "com.DefaultCompany.DrawPath",
-            "processId": 8200,
-            "exited": false
-        },
-        {
-            "deviceId": "R5CT4379SBP",
-            "name": "com.DefaultCompany.DrawPath",
-            "processId": 8736,
-            "exited": false
-        },
-        {
-            "deviceId": "R5CT4379SBP",
-            "name": "com.DefaultCompany.DrawPath",
-            "processId": 9091,
-            "exited": false
-        },
-        {
-            "deviceId": "R5CT4379SBP",
-            "name": "com.DefaultCompany.DrawPath",
             "processId": 9446,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "R5CT4379SBP",
             "name": "com.DefaultCompany.DrawPath",
             "processId": 26685,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CT4379SBP",
+            "name": "com.DefaultCompany.DrawPath",
+            "processId": 27351,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CT4379SBP",
+            "name": "com.DefaultCompany.DrawPath",
+            "processId": 28315,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CT4379SBP",
+            "name": "com.android.chrome",
+            "processId": 28784,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT4379SBP",
+            "name": "com.DefaultCompany.DrawPath",
+            "processId": 29434,
             "exited": false
         }
     ],
