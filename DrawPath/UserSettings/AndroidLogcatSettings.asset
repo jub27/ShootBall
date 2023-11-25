@@ -3,29 +3,11 @@
     "m_SelectedPackage": {
         "deviceId": "R5CT4379SBP",
         "name": "com.DefaultCompany.DrawPath",
-        "processId": 29434,
+        "processId": 495,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "R5CT4379SBP",
-            "name": "com.DefaultCompany.DrawPath",
-            "processId": 9446,
-            "exited": true
-        },
-        {
-            "deviceId": "R5CT4379SBP",
-            "name": "com.DefaultCompany.DrawPath",
-            "processId": 26685,
-            "exited": true
-        },
-        {
-            "deviceId": "R5CT4379SBP",
-            "name": "com.DefaultCompany.DrawPath",
-            "processId": 27351,
-            "exited": true
-        },
         {
             "deviceId": "R5CT4379SBP",
             "name": "com.DefaultCompany.DrawPath",
@@ -36,12 +18,24 @@
             "deviceId": "R5CT4379SBP",
             "name": "com.android.chrome",
             "processId": 28784,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "R5CT4379SBP",
             "name": "com.DefaultCompany.DrawPath",
             "processId": 29434,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CT4379SBP",
+            "name": "com.DefaultCompany.DrawPath",
+            "processId": 29894,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CT4379SBP",
+            "name": "com.DefaultCompany.DrawPath",
+            "processId": 495,
             "exited": false
         }
     ],
