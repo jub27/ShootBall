@@ -44,9 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d46693dea023ed741870a79ac6b977ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioSourcePrefab: {fileID: 0}
-  _bgmAudioClipList: []
-  _seAudioClipList: []
+  _audioSourcePrefab: {fileID: 3564302342261317154, guid: ca99aa8f1066dc746b1c971d186083cd, type: 3}
+  _audioClipList:
+  - {fileID: 8300000, guid: 475f4837af487ce4a9e68bb227455e4c, type: 3}
+  _bgmMixerGroup: {fileID: 2546942375574974934, guid: 6ff3c1ad8bdf0654481c473ca2f2b2d7, type: 2}
+  _seMixerGroup: {fileID: 8743329302739854085, guid: 6ff3c1ad8bdf0654481c473ca2f2b2d7, type: 2}
   collectionChecks: 1
-  maxPoolSize: 0
-  defaultPoolSize: 0
+  maxPoolSize: 20
+  defaultPoolSize: 4

@@ -39,6 +39,6 @@ public class RunningObject : MonoBehaviour
     {
         float timeOnRunningObjectHighest = yVelocity / -Physics2D.gravity.y;
         float distance = (_rigidbody.velocity.x / DRAG) * (1 - Mathf.Exp(-DRAG * timeOnRunningObjectHighest * 2.0f));
-        GameManager.Instance.EventManager.MakeEvent(new Vector3(_rigidbody.transform.position.x + distance, 0, 0));
+        GamePlaySceneManager.Instance.EventManager.MakeEvent(new Vector3(_rigidbody.transform.position.x + distance, 0, 0));
     }
 }

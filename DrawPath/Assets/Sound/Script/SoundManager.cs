@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Experimental.AI;
 using UnityEngine.Pool;
 
@@ -10,6 +11,10 @@ public class SoundManager : MonoBehaviour
     private AudioSource _audioSourcePrefab;
     [SerializeField]
     private List<AudioClip> _audioClipList;
+    [SerializeField]
+    private AudioMixerGroup _bgmMixerGroup;
+    [SerializeField]
+    private AudioMixerGroup _seMixerGroup;
 
     private Dictionary<string, AudioClip> _audioClipDictionary;
     private Coroutine _bgmChangeCoroutine;
@@ -23,8 +28,19 @@ public class SoundManager : MonoBehaviour
     private const float VOLUME_FADE_TIME = 1.0f;
     private Dictionary<AudioClip, AudioSource> _recentAudioSourceDictionary;
 
+    public static SoundManager Instance;
+
     private void Awake()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+            return;
+        }
         AudioSourcePoolItem.Pool = new ObjectPool<AudioSource>(CreatePooledItem, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject, true, defaultPoolSize, maxPoolSize);
         _recentAudioSourceDictionary = new Dictionary<AudioClip, AudioSource>();
         InitAudioClipDictionary();
@@ -70,9 +86,10 @@ public class SoundManager : MonoBehaviour
         Destroy(audioSource.gameObject);
     }
 
-    private AudioSource PlayAudioClip(AudioClip audioClip, bool loop = false)
+    private AudioSource PlayAudioClip(AudioClip audioClip, AudioMixerGroup audioMixerGroup ,bool loop = false)
     {
         AudioSource audioSource = AudioSourcePoolItem.Pool.Get();
+        audioSource.outputAudioMixerGroup = audioMixerGroup;
         audioSource.clip = audioClip;
         audioSource.loop = loop;
         audioSource.Play();
@@ -98,7 +115,7 @@ public class SoundManager : MonoBehaviour
         }
         AudioSourcePoolItem.Pool.Release(_bgmAudioSource);
 
-        _bgmAudioSource = PlayAudioClip(audioClip, loop);
+        _bgmAudioSource = PlayAudioClip(audioClip, _bgmMixerGroup ,loop);
         _bgmAudioSource.volume = 0;
 
         while (_bgmAudioSource.volume < 1.0f)
@@ -112,7 +129,7 @@ public class SoundManager : MonoBehaviour
     {
         if (_bgmAudioSource == null || _bgmAudioSource.isPlaying == false)
         {
-            _bgmAudioSource = PlayAudioClip(audioClip, loop);
+            _bgmAudioSource = PlayAudioClip(audioClip, _bgmMixerGroup,loop);
         }
         else
         {
@@ -126,7 +143,7 @@ public class SoundManager : MonoBehaviour
     {
         if (playOverlap)
         {
-            PlayAudioClip(audioClip);
+            PlayAudioClip(audioClip, _seMixerGroup);
         }
         else
         {
@@ -136,7 +153,7 @@ public class SoundManager : MonoBehaviour
             }
             else
             {
-                PlayAudioClip(audioClip);
+                PlayAudioClip(audioClip, _seMixerGroup);
             }
         }
     }

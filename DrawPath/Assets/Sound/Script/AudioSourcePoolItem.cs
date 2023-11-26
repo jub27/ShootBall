@@ -16,7 +16,7 @@ public class AudioSourcePoolItem : MonoBehaviour
 
     private void Update()
     {
-        if (Pool != null && _audioSource.isPlaying == false)
+        if (Pool != null && _audioSource.time >= _audioSource.clip.length)
         {
             Pool.Release(_audioSource);
         }
