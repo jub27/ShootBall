@@ -12,6 +12,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private List<AudioClip> _audioClipList;
     [SerializeField]
+    private AudioMixer _audioMixer;
+    [SerializeField]
     private AudioMixerGroup _bgmMixerGroup;
     [SerializeField]
     private AudioMixerGroup _seMixerGroup;
@@ -32,7 +34,7 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -156,6 +158,24 @@ public class SoundManager : MonoBehaviour
                 PlayAudioClip(audioClip, _seMixerGroup);
             }
         }
+    }
+    
+    public void SetBgmVolume(float value)
+    {
+        value = Mathf.Lerp(-80f, 0, value);
+        _audioMixer.SetFloat("Bgm", value);
+    }
+
+    public void SetSeVolume(float value)
+    {
+        value = Mathf.Lerp(-80f, 0, value);
+        _audioMixer.SetFloat("Se", value);
+    }
+
+    public void SetMasterVolume(float value)
+    {
+        value = Mathf.Lerp(-80f, 0, value);
+        _audioMixer.SetFloat("Master", value);
     }
 
     public AudioClip GetAudioClip(string audioClipName)
