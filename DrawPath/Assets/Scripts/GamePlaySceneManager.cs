@@ -5,7 +5,7 @@ using TMPro;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
-
+using JyCustomTool;
 
 public class GamePlaySceneManager : MonoBehaviour
 {
@@ -13,6 +13,8 @@ public class GamePlaySceneManager : MonoBehaviour
     private RunningObject runningObject;
     [SerializeField]
     private TextMeshProUGUI distanceText;
+    [SerializeField]
+    private AudioClip bgm;
     public EventManager EventManager;
     public static GamePlaySceneManager Instance;
 
@@ -25,7 +27,7 @@ public class GamePlaySceneManager : MonoBehaviour
 
     private void Start()
     {
-        SoundManager.Instance.PlayBGM(SoundManager.Instance.GetAudioClip("Bgm1"), loop: true);
+        SoundManager.Instance.PlayBGM(bgm, loop: true);
     }
 
     // Update is called once per frame

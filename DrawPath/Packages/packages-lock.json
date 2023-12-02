@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.jy-custom.soundmanager": {
+      "version": "https://github.com/jub27/Tool-SoundManager.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "a1f0ff66673a82ac3e84b8976d013b8156790dcb"
+    },
     "com.unity.2d.animation": {
       "version": "9.0.3",
       "depth": 1,

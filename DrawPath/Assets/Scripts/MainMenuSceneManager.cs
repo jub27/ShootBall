@@ -18,8 +18,8 @@ public class MainMenuSceneManager : MonoBehaviour
 
     private void Update()
     {
-        passedTime += Time.deltaTime;
-        _backgroundImage.material.SetTextureOffset("_MainTex", new Vector2(BACKGROUND_SCROLL_SPEED * passedTime, 0));
+        //passedTime += Time.deltaTime;
+        //_backgroundImage.material.SetTextureOffset("_MainTex", new Vector2(BACKGROUND_SCROLL_SPEED * passedTime, 0));
     }
 
     public void OnGamePlayButtonClick()

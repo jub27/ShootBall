@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 186300293}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1417081129}
+        m_TargetAssemblyTypeName: MainMenuSceneManager, Assembly-CSharp
+        m_MethodName: OnGamePlayButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &186300293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,6 +784,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8395458905644026059, guid: 5356e4167d768e943ad7f09ac5652f4f, type: 3}
+      propertyPath: _audioSourcePrefab
+      value: 
+      objectReference: {fileID: 3564302342261317154, guid: ca99aa8f1066dc746b1c971d186083cd, type: 3}
     - target: {fileID: 8395458905644026059, guid: 5356e4167d768e943ad7f09ac5652f4f, type: 3}
       propertyPath: _audioClipList.Array.size
       value: 1

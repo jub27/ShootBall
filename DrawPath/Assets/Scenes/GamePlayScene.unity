@@ -1730,6 +1730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runningObject: {fileID: 1875142047}
   distanceText: {fileID: 1608543988}
+  bgm: {fileID: 8300000, guid: 475f4837af487ce4a9e68bb227455e4c, type: 3}
   EventManager: {fileID: 333260641}
 --- !u!4 &1808470237
 Transform:
