@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent (typeof (Rigidbody2D))]
 public class RunningObject : MonoBehaviour
 {
     private Rigidbody2D _rigidbody;
     private const float DRAG = 0.05f;
-    private GameObject obj;
 
     private void Awake()
     {

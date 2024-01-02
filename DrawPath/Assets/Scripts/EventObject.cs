@@ -14,7 +14,6 @@ public class EventObject : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Debug.Log("Release");
         pool.Release(this);
     }
 }
