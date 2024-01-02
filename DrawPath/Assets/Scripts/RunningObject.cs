@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent (typeof (Rigidbody2D))]
 public class RunningObject : MonoBehaviour
@@ -12,11 +13,7 @@ public class RunningObject : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-    }
-
-    private void Start()
-    {
-        AddForce();
+        _rigidbody.gravityScale = 0;
     }
 
     private void Update()
@@ -40,5 +37,10 @@ public class RunningObject : MonoBehaviour
         float timeOnRunningObjectHighest = yVelocity / -Physics2D.gravity.y;
         float distance = (_rigidbody.velocity.x / DRAG) * (1 - Mathf.Exp(-DRAG * timeOnRunningObjectHighest * 2.0f));
         GamePlaySceneManager.Instance.EventManager.MakeEvent(new Vector3(_rigidbody.transform.position.x + distance, 0, 0));
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        Debug.Log(222);
     }
 }
